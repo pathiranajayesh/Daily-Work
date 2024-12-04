@@ -10,6 +10,7 @@ export default function Home() {
       <TopicBox food="Rice" price = "Rs.300"/>
       <TopicBox food="Hoppers" price = "Rs.450"/>
       {/* <Contents/> */}
+      {/* Test Comment */}
       
     </div>
   )
