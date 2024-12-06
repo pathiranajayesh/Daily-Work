@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Pages/Home';
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
+import './App.css'
+import { useState } from 'react';
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Routes>
 
-          <Route exact path='/'element={<Home/>}/>
-            
-          <Route path='/About' element={<About/>}/>
-            
-          <Route path='/Contact' element={<Contact/>}/>       
-      </Routes>
-      </div>
-    </Router>
-  );
+  const [count,setCount] = useState(0);
+
+  // let count = 0;
+
+  // const increment = ()=>{
+  //   count +=1;
+  // };
+
+  // const decrement = ()=>{
+  //   count -=1;
+  // };
+
+  const increment =()=>{
+    setCount(count+1);
+  };
+
+  const decrement = ()=>{
+    setCount(count-1);
+  };
+
+  return (
+    <>
+    <span className='title'>My Counter</span>
+    <p className='subTitle'>The Count is {count}</p>
+    <button onClick={increment} className='button'>+</button>
+    <button onClick={decrement} className='button'>-</button>
+    <div>
+      
+    </div>
+    </>
+  )
 }
 
 export default App;
