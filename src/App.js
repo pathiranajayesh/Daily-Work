@@ -1,20 +1,32 @@
 import React from 'react';
 import './App.css'
-function buttonClick(){
-  console.log("Button is clicked.");
-  alert("Button is clicked.")
-}
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Profile from './Profile';
+import About from './About';
+
 
 
 function App() {
   return (
     <div>
-      <h1>
-        React Event Handling
-      </h1>
-      <br></br>
-      <hr></hr>
-      <button onClick={buttonClick}>Click Here</button>
+
+      <h1>Static Content</h1>
+
+      <BrowserRouter>
+        <Routes>
+          
+            <Route path="/" element={<Home/>}>
+            </Route>
+
+            <Route path='/profile' element={<Profile/>}>
+            </Route>
+
+            <Route path='/about' element={<About/>}>
+            </Route>
+
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 
